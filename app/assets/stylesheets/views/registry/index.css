@@ -1,0 +1,146 @@
+body {
+  background: #FFFEF9;
+  font-family: 'Lato', sans-serif;
+}
+
+.main {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.main .section {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.main .header {
+  border: #479CE1 solid 5px;
+  padding: 25px;
+  text-align: center;
+}
+
+.main h4 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.main .section h4 {
+  margin-top: 30px;
+}
+
+.main h2.registry_items_title {
+  text-align: center;
+}
+
+.topcover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 50px;
+}
+
+#registry_items {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: auto;
+}
+
+#registry_items .col {
+  width: 300px;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+}
+
+#registry_items .col:last-child {
+  margin-right: 0;
+}
+
+#registry_items .gift {
+  /*float: left;*/
+  width: 300px;
+  background: #fff;
+  border-bottom: #479CE1 5px solid;
+  margin-bottom: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#registry_items .gift .cover {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-repeat: none;
+}
+
+#registry_items .gift h3 {
+  color: #3E89E1;
+  text-align: center;
+  margin-top: 0;
+}
+
+#registry_items .gift .info {
+  padding: 15px;
+}
+
+#registry_items .gift .details {
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+#registry_items .gift.open .details {
+  height: auto;
+  opacity: 1;
+}
+
+#registry_items .gift .cost {
+  text-align: center;
+}
+
+#registry_items .gift .cost span {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.btn.btn-gift {
+  color: #FFF;
+  background-color: #E18F8E;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.btn.btn-gift:hover {
+  background-color: #E17273;
+}
+
+.btn.btn-gift a:hover {
+  color: #FFF;
+}
+
+/* Mobile devices */
+@media (max-width: 500px) {
+  .topcover {
+    /* Background attachment doesn't work on iOS */
+    background-attachment: initial;
+    height: 300px;
+  }
+
+  .main {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+
+@media (max-width: 855px) {
+  .main {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

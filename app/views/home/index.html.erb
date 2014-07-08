@@ -1,0 +1,66 @@
+<%= javascript_include_tag "views/registry/index.js" %>
+<%= javascript_tag do %>
+  var registry = <%= raw @registry.to_json %>;
+<% end %>
+
+<% if @registry.cover_image.present? %>
+  <div class="topcover" style="background-image:url('<%= @registry.cover_image %>')"></div>
+<% end %>
+
+<div class="main">
+  <div id="registry_info"></div>
+  <h2 class="registry_items_title">Registry Items</h2>
+  <div id="registry_items"></div>
+</div>
+
+<script id="registry_tmpl" type="text/template">
+  <div class="header section">
+    <h4>Welcome to the Honeymoon Registry of</h4>
+    <h1><%%= registry.title %></h1>
+    <h4><%%= registry.date_formatted %></h4>
+  </div>
+  <div class="story section">
+    <h4>Our Story</h4>
+    <p><%%= registry.story %></p>
+  </div>
+  <div class="details section">
+    <h4>The Big Day Details</h4>
+    <p><%%= registry.honeymoon_details %></p>
+  </div>
+</script>
+
+<script id="registry_items_tmpl" type="text/template">
+  <%% for (var i = 0; i < registry.registry_items.length; i++) { %>
+    <%% var item = registry.registry_items[i]; %>
+    <div class="gift">
+      <div class="cover" style="background-image:url(<%%= item.image %>)"></div>
+      <div>
+        <div class="info">
+          <h3>
+            <%%= item.title %>
+          </h3>
+          <hr>
+          <div class="cost">
+            <div>
+              <span>Price: </span>
+              $<%%= item.price_humanized %>
+            </div>
+            <div>
+              <span>Quantity desired: </span>
+              <%%= item.qty_humanized %>
+            </div>
+          </div>
+          <div class="details">
+            <hr>
+            <div class="description">
+              <p><%%= item.description %></p>
+            </div>
+            <div>
+              <a class="btn btn-gift" href="#">Gift This</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%% } %>
+</script>
